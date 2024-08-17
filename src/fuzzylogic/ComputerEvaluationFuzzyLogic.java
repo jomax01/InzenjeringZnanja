@@ -2,12 +2,33 @@ package fuzzylogic;
 
 import net.sourceforge.jFuzzyLogic.FIS;
 import net.sourceforge.jFuzzyLogic.rule.Variable;
+import java.util.Scanner;
 
 public class ComputerEvaluationFuzzyLogic {
 
-    public static void main(String[] args) {
+    // Додајте main методу за самостално покретање
+    @SuppressWarnings("resource")
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Унос података преко конзоле
+        System.out.print("Унесите број језгара процесора: ");
+        int cores = scanner.nextInt();
+
+        System.out.print("Унесите капацитет RAM-а (GB): ");
+        int ram = scanner.nextInt();
+
+        System.out.print("Унесите брзину приступа диску (MB/s): ");
+        int storageSpeed = scanner.nextInt();
+
+        System.out.print("Унесите снагу графичке картице (MHz): ");
+        int gpuPower = scanner.nextInt();
+
+        System.out.print("Унесите снагу напајања (W): ");
+        int powerSupply = scanner.nextInt();
+
         // Учитавање фази датотеке
-        String fileName = "resources/computerEvaluation.fcl"; // Поставите путању до ваше .fcl датотеке
+        String fileName = "resources/computerEvaluation.fcl"; // Поставите апсолутни или релативни пут до ваше .fcl датотеке
         FIS fis = FIS.load(fileName, true);
 
         // Провера да ли је датотека правилно учитана
@@ -16,12 +37,12 @@ public class ComputerEvaluationFuzzyLogic {
             return;
         }
 
-        // Постављање улазних променљивих
-        fis.setVariable("cores", 8); // Број језгара
-        fis.setVariable("ram", 16);  // Капацитет радне меморије (GB)
-        fis.setVariable("storageSpeed", 150); // Брзина приступа диску (MB/s)
-        fis.setVariable("gpuPower", 1200);  // Снага графичке картице (MHz)
-        fis.setVariable("powerSupply", 700);  // Снага напајања (W)
+        // Постављање улазних променљивих из унетих података
+        fis.setVariable("cores", cores);
+        fis.setVariable("ram", ram);
+        fis.setVariable("storageSpeed", storageSpeed);
+        fis.setVariable("gpuPower", gpuPower);
+        fis.setVariable("powerSupply", powerSupply);
 
         // Извршавање фази система
         fis.evaluate();
@@ -33,10 +54,14 @@ public class ComputerEvaluationFuzzyLogic {
         Variable miningUse = fis.getVariable("miningSuitability");
         Variable hostingUse = fis.getVariable("hostingSuitability");
 
+     // Приказ резултата
         System.out.println("Погодност за кућну употребу: " + homeUse.getValue());
         System.out.println("Погодност за пословну употребу: " + businessUse.getValue());
         System.out.println("Погодност за играње игара: " + gamingUse.getValue());
         System.out.println("Погодност за рударење криптовалута: " + miningUse.getValue());
         System.out.println("Погодност за хостинг веб сајтова: " + hostingUse.getValue());
+
+
+        scanner.close();
     }
 }
