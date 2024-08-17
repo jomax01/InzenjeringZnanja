@@ -1,0 +1,137 @@
+FUNCTION_BLOCK computerEvaluation
+
+   VAR_INPUT
+      cores: REAL;
+      ram: REAL;
+      storageSpeed: REAL;
+      gpuPower: REAL;
+      powerSupply: REAL;
+   END_VAR
+
+   VAR_OUTPUT
+      homeUseSuitability: REAL;
+      businessUseSuitability: REAL;
+      gamingSuitability: REAL;
+      miningSuitability: REAL;
+      hostingSuitability: REAL;
+   END_VAR
+
+   FUZZIFY cores
+      TERM few := (0, 0) (4, 1) (8, 0);
+      TERM average := (4, 0) (8, 1) (16, 0);
+      TERM many := (8, 0) (16, 1);
+   END_FUZZIFY
+
+   FUZZIFY ram
+      TERM low := (0, 0) (8, 1) (16, 0);
+      TERM medium := (8, 0) (16, 1) (32, 0);
+      TERM high := (16, 0) (32, 1);
+   END_FUZZIFY
+
+   FUZZIFY storageSpeed
+      TERM slow := (0, 0) (100, 1) (200, 0);
+      TERM fast := (100, 0) (200, 1);
+   END_FUZZIFY
+
+   FUZZIFY gpuPower
+      TERM low := (0, 0) (500, 1) (1000, 0);
+      TERM medium := (500, 0) (1000, 1) (2000, 0);
+      TERM high := (1000, 0) (2000, 1);
+   END_FUZZIFY
+
+   FUZZIFY powerSupply
+      TERM weak := (0, 0) (300, 1) (600, 0);
+      TERM moderate := (300, 0) (600, 1) (900, 0);
+      TERM strong := (600, 0) (900, 1);
+   END_FUZZIFY
+
+   DEFUZZIFY homeUseSuitability
+      TERM low := (0, 0) (0.5, 1) (1, 0);
+      TERM medium := (0.5, 0) (0.75, 1) (1, 0);
+      TERM high := (0.75, 0) (1, 1);
+      METHOD : COG;
+      DEFAULT := 0;
+      RANGE := (0 .. 1);
+   END_DEFUZZIFY
+
+   DEFUZZIFY businessUseSuitability
+      TERM low := (0, 0) (0.5, 1) (1, 0);
+      TERM medium := (0.5, 0) (0.75, 1) (1, 0);
+      TERM high := (0.75, 0) (1, 1);
+      METHOD : COG;
+      DEFAULT := 0;
+      RANGE := (0 .. 1);
+   END_DEFUZZIFY
+
+   DEFUZZIFY gamingSuitability
+      TERM low := (0, 0) (0.5, 1) (1, 0);
+      TERM medium := (0.5, 0) (0.75, 1) (1, 0);
+      TERM high := (0.75, 0) (1, 1);
+      METHOD : COG;
+      DEFAULT := 0;
+      RANGE := (0 .. 1);
+   END_DEFUZZIFY
+
+   DEFUZZIFY miningSuitability
+      TERM low := (0, 0) (0.5, 1) (1, 0);
+      TERM medium := (0.5, 0) (0.75, 1) (1, 0);
+      TERM high := (0.75, 0) (1, 1);
+      METHOD : COG;
+      DEFAULT := 0;
+      RANGE := (0 .. 1);
+   END_DEFUZZIFY
+
+   DEFUZZIFY hostingSuitability
+      TERM low := (0, 0) (0.5, 1) (1, 0);
+      TERM medium := (0.5, 0) (0.75, 1) (1, 0);
+      TERM high := (0.75, 0) (1, 1);
+      METHOD : COG;
+      DEFAULT := 0;
+      RANGE := (0 .. 1);
+   END_DEFUZZIFY
+
+   RULEBLOCK No1
+      // Rules for home use
+      RULE 1 : IF cores IS few AND ram IS low AND gpuPower IS low THEN homeUseSuitability IS low;
+      RULE 2 : IF cores IS average AND ram IS medium THEN homeUseSuitability IS medium;
+      RULE 3 : IF cores IS many THEN homeUseSuitability IS high;
+      RULE 4 : IF storageSpeed IS fast THEN homeUseSuitability IS high;
+      RULE 5 : IF storageSpeed IS slow AND ram IS low THEN homeUseSuitability IS low;
+
+      // Rules for business use
+      RULE 6 : IF cores IS average AND storageSpeed IS fast THEN businessUseSuitability IS high;
+      RULE 7 : IF cores IS many AND ram IS high THEN businessUseSuitability IS high;
+      RULE 8 : IF cores IS few THEN businessUseSuitability IS low;
+      RULE 9 : IF ram IS medium AND storageSpeed IS fast THEN businessUseSuitability IS medium;
+      RULE 10 : IF gpuPower IS low THEN businessUseSuitability IS low;
+
+      // Rules for gaming
+      RULE 11 : IF cores IS many AND gpuPower IS high AND ram IS high THEN gamingSuitability IS high;
+      RULE 12 : IF cores IS average AND gpuPower IS medium THEN gamingSuitability IS medium;
+      RULE 13 : IF cores IS few THEN gamingSuitability IS low;
+      RULE 14 : IF ram IS medium AND gpuPower IS medium THEN gamingSuitability IS medium;
+      RULE 15 : IF powerSupply IS strong THEN gamingSuitability IS high;
+
+      // Rules for mining
+      RULE 16 : IF powerSupply IS strong AND gpuPower IS high THEN miningSuitability IS high;
+      RULE 17 : IF powerSupply IS moderate AND gpuPower IS medium THEN miningSuitability IS medium;
+      RULE 18 : IF powerSupply IS weak THEN miningSuitability IS low;
+      RULE 19 : IF cores IS many AND powerSupply IS strong THEN miningSuitability IS high;
+      RULE 20 : IF ram IS high AND powerSupply IS strong THEN miningSuitability IS high;
+
+      // Rules for hosting
+      RULE 21 : IF cores IS average AND storageSpeed IS fast THEN hostingSuitability IS high;
+      RULE 22 : IF cores IS many THEN hostingSuitability IS medium;
+      RULE 23 : IF cores IS few THEN hostingSuitability IS low;
+      RULE 24 : IF ram IS high AND storageSpeed IS fast THEN hostingSuitability IS high;
+      RULE 25 : IF ram IS medium AND storageSpeed IS fast THEN hostingSuitability IS medium;
+
+      // Additional rules to reach 30
+      RULE 26 : IF powerSupply IS strong THEN hostingSuitability IS high;
+      RULE 27 : IF gpuPower IS high THEN gamingSuitability IS high;
+      RULE 28 : IF gpuPower IS low AND cores IS few THEN homeUseSuitability IS low;
+      RULE 29 : IF storageSpeed IS slow THEN businessUseSuitability IS low;
+      RULE 30 : IF gpuPower IS medium THEN miningSuitability IS medium;
+   END_RULEBLOCK
+
+END_FUNCTION_BLOCK
