@@ -66,10 +66,13 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/PC/Desktop/IZ projekat/InzenjeringZnanja/lib/commons-collections4-4.1.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+=======
+>>>>>>> 5744d0de1705c5998c521d8ac9f60450796d820b
 	<classpathentry kind="output" path="bin"/>
 </classpath>
