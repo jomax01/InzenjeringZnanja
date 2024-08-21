@@ -1,0 +1,10 @@
+Intel Core i3 10100,8,256,Intel UHD 630,Intel H410
+Intel Core i5 10500,16,512,Nvidia GTX 1660,Intel H470
+AMD Ryzen 5 3600,16,512,AMD Radeon RX 580,AMD B450
+Intel Core i7 10700K,32,1024,Nvidia RTX 2060,Intel Z490
+Intel Core i5 9400F,8,256,Nvidia GTX 1050 Ti,Intel B360
+Intel Core i5 10400,16,512,Nvidia GTX 1650,Intel H470
+AMD Ryzen 7 3700X,32,1024,AMD Radeon RX 5700,AMD X570
+Intel Core i9 10900K,64,2048,Nvidia RTX 3080,Intel Z490
+AMD Ryzen 5 2600,16,512,AMD Radeon RX 560,AMD B450
+Intel Core i3 10110U,8,256,Intel UHD 620,Intel Comet Lake-U
