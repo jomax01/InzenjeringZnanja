@@ -2,48 +2,84 @@ package similarity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+
+import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
+import org.semanticweb.owlapi.model.OWLObjectProperty;
 
 public class CaseRetrieval {
-    
-    // Metoda za pretragu najsličnijih računara iz baze
-    public List<Computer> retrieveMostSimilar(Computer targetComputer, List<Computer> computerDatabase, int numberOfResults) {
-        List<Computer> mostSimilarComputers = new ArrayList<>();
-        SimilarityCalculator similarityCalculator = new SimilarityCalculator();
 
-        // Kreiranje liste sličnosti za svaki računar u bazi
-        List<SimilarityResult> similarityResults = new ArrayList<>();
-        for (Computer c : computerDatabase) {
-            double similarity = similarityCalculator.calculateSimilarity(targetComputer, c);
-            similarityResults.add(new SimilarityResult(c, similarity));
-        }
+    private ComputerOntologyDAO ontologyDAO;
 
-        // Sortiraj prema sličnosti (od najviše do najniže)
-        similarityResults.sort((r1, r2) -> Double.compare(r2.getSimilarity(), r1.getSimilarity()));
+    // Težinski faktori kao konstante
+    private static final double CPU_WEIGHT = 0.3;
+    private static final double MEMORY_WEIGHT = 0.2;
+    private static final double GPU_WEIGHT = 0.2;
+    private static final double CHIPSET_WEIGHT = 0.15;
+    private static final double STORAGE_WEIGHT = 0.15;
+    private static final double SIMILARITY_THRESHOLD = 0.8;
 
-        // Uzmi prvih 'numberOfResults' računara
-        for (int i = 0; i < Math.min(numberOfResults, similarityResults.size()); i++) {
-            mostSimilarComputers.add(similarityResults.get(i).getComputer());
-        }
-
-        return mostSimilarComputers;
+    public CaseRetrieval(ComputerOntologyDAO ontologyDAO) {
+        this.ontologyDAO = ontologyDAO;
     }
 
-    // Pomoćna klasa za čuvanje rezultata sličnosti
-    private class SimilarityResult {
-        private Computer computer;
-        private double similarity;
+    public double compareComputers(OWLNamedIndividual computer1, OWLNamedIndividual computer2) {
+        double similarity = 0.0;
 
-        public SimilarityResult(Computer computer, double similarity) {
-            this.computer = computer;
-            this.similarity = similarity;
+        similarity += compareComponent(computer1, computer2, "hasCPU", CPU_WEIGHT);
+        similarity += compareComponent(computer1, computer2, "hasMemory", MEMORY_WEIGHT);
+        similarity += compareComponent(computer1, computer2, "hasGPU", GPU_WEIGHT);
+        similarity += compareComponent(computer1, computer2, "hasChipset", CHIPSET_WEIGHT);
+        similarity += compareComponent(computer1, computer2, "hasStorage", STORAGE_WEIGHT);
+
+        return similarity;
+    }
+
+    private double compareComponent(OWLNamedIndividual computer1, OWLNamedIndividual computer2, String propertyName, double weight) {
+        OWLObjectProperty property = ontologyDAO.getOWLDataFactory().getOWLObjectProperty(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#" + propertyName));
+        OWLNamedIndividual component1 = ontologyDAO.getRelatedIndividual(computer1, property);
+        OWLNamedIndividual component2 = ontologyDAO.getRelatedIndividual(computer2, property);
+        
+        if (component1 != null && component2 != null && component1.equals(component2)) {
+            return weight;
+        } else if (component1 == null && component2 == null) {
+            return weight * 0.5;
+        }
+        return 0.0;
+    }
+
+    public OWLNamedIndividual findMostSimilar(OWLNamedIndividual targetComputer) {
+        Set<OWLNamedIndividual> allComputers = ontologyDAO.getAllComputers();
+        OWLNamedIndividual mostSimilar = null;
+        double maxSimilarity = 0;
+
+        for (OWLNamedIndividual computer : allComputers) {
+            if (!computer.equals(targetComputer)) {
+                double similarity = compareComputers(targetComputer, computer);
+                if (similarity > maxSimilarity) {
+                    maxSimilarity = similarity;
+                    mostSimilar = computer;
+                }
+            }
         }
 
-        public Computer getComputer() {
-            return computer;
+        return mostSimilar;
+    }
+
+    public List<OWLNamedIndividual> findSimilarComputers(OWLNamedIndividual targetComputer) {
+        List<OWLNamedIndividual> similarComputers = new ArrayList<>();
+        Set<OWLNamedIndividual> allComputers = ontologyDAO.getAllComputers();
+
+        for (OWLNamedIndividual computer : allComputers) {
+            if (!computer.equals(targetComputer)) {
+                double similarity = compareComputers(targetComputer, computer);
+                if (similarity >= SIMILARITY_THRESHOLD) {
+                    similarComputers.add(computer);
+                }
+            }
         }
 
-        public double getSimilarity() {
-            return similarity;
-        }
+        return similarComputers;
     }
 }

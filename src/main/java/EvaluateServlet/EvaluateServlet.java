@@ -47,7 +47,7 @@ public class EvaluateServlet extends HttpServlet {
             request.setAttribute("results", results);
 
             // Прослеђивање резултата на index.jsp страницу
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            request.getRequestDispatcher("/evaluatePage.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             // Руковање грешкама ако корисник унесе невалидне бројеве
             response.getWriter().println("<h1>Error: Please enter valid numbers for CPU cores, memory size, disk speed, and power supply!</h1>");
