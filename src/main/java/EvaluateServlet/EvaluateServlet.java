@@ -24,10 +24,11 @@ public class EvaluateServlet extends HttpServlet {
         try {
             // Преузимање вредности из форме
             int cpuCores = Integer.parseInt(request.getParameter("cpuCores"));
+            double cpuSpeed = Double.parseDouble(request.getParameter("cpuSpeed"));
+            int threadNumber = Integer.parseInt(request.getParameter("threadNumber"));
+            int storageSize = Integer.parseInt(request.getParameter("storageSize"));
             int memorySize = Integer.parseInt(request.getParameter("memorySize"));
-            int diskSpeed = Integer.parseInt(request.getParameter("diskSpeed"));
-            int powerSupply = Integer.parseInt(request.getParameter("powerSupply"));
-            String gpuModel = request.getParameter("gpuModel");
+            int gpuFrequency = Integer.parseInt(request.getParameter("gpuFrequency"));
 
             // Путања до .fcl датотеке
             String fileName = getServletContext().getRealPath("/WEB-INF/resources/computerEvaluation.fcl");
@@ -37,20 +38,20 @@ public class EvaluateServlet extends HttpServlet {
             
             // Резултати за све намене
             Map<String, Double> results = new HashMap<>();
-            results.put("homeUseSuitability", fuzzySystem.evaluateComputer(fileName, cpuCores, memorySize, diskSpeed, powerSupply, "home", gpuModel));
-            results.put("businessUseSuitability", fuzzySystem.evaluateComputer(fileName, cpuCores, memorySize, diskSpeed, powerSupply, "business", gpuModel));
-            results.put("gamingSuitability", fuzzySystem.evaluateComputer(fileName, cpuCores, memorySize, diskSpeed, powerSupply, "gaming", gpuModel));
-            results.put("miningSuitability", fuzzySystem.evaluateComputer(fileName, cpuCores, memorySize, diskSpeed, powerSupply, "mining", gpuModel));
-            results.put("hostingSuitability", fuzzySystem.evaluateComputer(fileName, cpuCores, memorySize, diskSpeed, powerSupply, "hosting", gpuModel));
+            results.put("homeUseSuitability", fuzzySystem.evaluateComputer(fileName, cpuCores, cpuSpeed, threadNumber, storageSize, memorySize, gpuFrequency, "home"));
+            results.put("businessUseSuitability", fuzzySystem.evaluateComputer(fileName, cpuCores, cpuSpeed, threadNumber, storageSize, memorySize, gpuFrequency, "business"));
+            results.put("gamingSuitability", fuzzySystem.evaluateComputer(fileName, cpuCores, cpuSpeed, threadNumber, storageSize, memorySize, gpuFrequency, "gaming"));
+            results.put("miningSuitability", fuzzySystem.evaluateComputer(fileName, cpuCores, cpuSpeed, threadNumber, storageSize, memorySize, gpuFrequency, "mining"));
+            results.put("hostingSuitability", fuzzySystem.evaluateComputer(fileName, cpuCores, cpuSpeed, threadNumber, storageSize, memorySize, gpuFrequency, "hosting"));
 
             // Постављање резултата у атрибуте захтева
             request.setAttribute("results", results);
 
-            // Прослеђивање резултата на index.jsp страницу
+            // Прослеђивање резултата на evaluatePage.jsp страницу
             request.getRequestDispatcher("/evaluatePage.jsp").forward(request, response);
         } catch (NumberFormatException e) {
             // Руковање грешкама ако корисник унесе невалидне бројеве
-            response.getWriter().println("<h1>Error: Please enter valid numbers for CPU cores, memory size, disk speed, and power supply!</h1>");
+            response.getWriter().println("<h1>Error: Please enter valid numbers for all inputs!</h1>");
         }
     }
 

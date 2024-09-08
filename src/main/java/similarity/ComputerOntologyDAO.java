@@ -33,25 +33,21 @@ public class ComputerOntologyDAO {
         }
     }
 
-    public void addComputerInstance(String instanceName, String cpuType, String memoryType, String gpuType, String chipsetType, String storageType) {
+    public void addComputerInstance(String instanceName, String cpuType, String memoryType, String gpuType) {
         OWLNamedIndividual computerInstance = dataFactory.getOWLNamedIndividual(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#" + instanceName));
 
         OWLNamedIndividual cpuInstance = dataFactory.getOWLNamedIndividual(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#" + cpuType));
         OWLNamedIndividual memoryInstance = dataFactory.getOWLNamedIndividual(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#" + memoryType));
         OWLNamedIndividual gpuInstance = dataFactory.getOWLNamedIndividual(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#" + gpuType));
-        OWLNamedIndividual chipsetInstance = dataFactory.getOWLNamedIndividual(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#" + chipsetType));
-        OWLNamedIndividual storageInstance = dataFactory.getOWLNamedIndividual(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#" + storageType));
 
         // Dodavanje instance računara u ontologiju
-        OWLAxiom axiom = dataFactory.getOWLClassAssertionAxiom(dataFactory.getOWLClass(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#PC")), computerInstance);
+        OWLAxiom axiom = dataFactory.getOWLClassAssertionAxiom(dataFactory.getOWLClass(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#Desktop")), computerInstance);
         manager.addAxiom(ontology, axiom);
 
-        // Povezivanje svojstava kao što su "hasCPU", "hasMemory", itd.
+        // Povezivanje svojstava kao što su "hasCPU", "hasRAM", "hasGPU"
         linkIndividualToProperty(computerInstance, cpuInstance, "hasCPU");
-        linkIndividualToProperty(computerInstance, memoryInstance, "hasMemory");
+        linkIndividualToProperty(computerInstance, memoryInstance, "hasRAM");
         linkIndividualToProperty(computerInstance, gpuInstance, "hasGPU");
-        linkIndividualToProperty(computerInstance, chipsetInstance, "hasChipset");
-        linkIndividualToProperty(computerInstance, storageInstance, "hasStorage");
 
         saveOntology();
     }
@@ -72,14 +68,27 @@ public class ComputerOntologyDAO {
     }
 
     public Set<OWLNamedIndividual> getAllComputers() {
-        OWLClass computerClass = dataFactory.getOWLClass(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#PC"));
-        return ontology.getIndividualsInSignature()
+        OWLClass pcClass = dataFactory.getOWLClass(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#PC"));
+
+        // Сет за чување свих инстанци
+        Set<OWLNamedIndividual> allComputers = getIndividualsOfClass(pcClass);
+
+        // Претражујемо и подкласе класе PC (нпр. Desktop и Laptop)
+        ontology.getSubClassAxiomsForSuperClass(pcClass).forEach(subClassAxiom -> {
+            OWLClass subClass = subClassAxiom.getSubClass().asOWLClass();
+            allComputers.addAll(getIndividualsOfClass(subClass));
+        });
+
+        return allComputers;
+    }
+
+    private Set<OWLNamedIndividual> getIndividualsOfClass(OWLClass owlClass) {
+        return ontology.getClassAssertionAxioms(owlClass)
                 .stream()
-                .filter(ind -> ontology.getClassAssertionAxioms(computerClass)
-                        .stream()
-                        .anyMatch(axiom -> axiom.getIndividual().equals(ind)))
+                .map(axiom -> axiom.getIndividual().asOWLNamedIndividual())
                 .collect(Collectors.toSet());
     }
+
 
     public OWLDataFactory getOWLDataFactory() {
         return dataFactory;
@@ -104,44 +113,40 @@ public class ComputerOntologyDAO {
                 .orElse(null);
     }
 
-    public OWLNamedIndividual createComputerInstance(String cpuCores, String memorySize, String diskSpeed,
-            String powerSupply, String gpuModel) {
+    public String getComputerDetails(OWLNamedIndividual individual) {
+        StringBuilder details = new StringBuilder();
 
-        // Proverite da li su parametri null
-        if (cpuCores == null || memorySize == null || diskSpeed == null || powerSupply == null || gpuModel == null) {
-            throw new IllegalArgumentException("None of the computer specifications can be null.");
+        // Get the individual's IRI and extract the short form (part after the #)
+        String individualName = getShortForm(individual.getIRI());
+        details.append("Computer Name: ").append(individualName).append("\n");
+
+        // Get related properties such as hasCPU, hasRAM, and hasGPU
+        OWLObjectProperty hasCPU = dataFactory.getOWLObjectProperty(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#hasCPU"));
+        OWLObjectProperty hasRAM = dataFactory.getOWLObjectProperty(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#hasRAM"));
+        OWLObjectProperty hasGPU = dataFactory.getOWLObjectProperty(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#hasGPU"));
+
+        OWLNamedIndividual cpu = getRelatedIndividual(individual, hasCPU);
+        OWLNamedIndividual ram = getRelatedIndividual(individual, hasRAM);
+        OWLNamedIndividual gpu = getRelatedIndividual(individual, hasGPU);
+
+        if (cpu != null) {
+            details.append("CPU: ").append(getShortForm(cpu.getIRI())).append("\n");
+        }
+        if (ram != null) {
+            details.append("RAM: ").append(getShortForm(ram.getIRI())).append("\n");
+        }
+        if (gpu != null) {
+            details.append("GPU: ").append(getShortForm(gpu.getIRI())).append("\n");
         }
 
-        // Kreiramo jedinstveno ime za instancu računara
-        String instanceName = "Computer_" + cpuCores + "_" + memorySize + "_" + diskSpeed + "_" + powerSupply + "_" + gpuModel;
-
-        // Kreiramo instancu za klasu računara (PC)
-        OWLClass computerClass = dataFactory.getOWLClass(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#PC"));
-        OWLNamedIndividual computerInstance = dataFactory.getOWLNamedIndividual(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#" + instanceName));
-
-        // Dodajemo instancu u ontologiju
-        OWLAxiom classAssertion = dataFactory.getOWLClassAssertionAxiom(computerClass, computerInstance);
-        manager.addAxiom(ontology, classAssertion);
-
-        // Dodajemo osobine računara kao atribute
-        addDataProperty(computerInstance, "hasCPUCores", cpuCores);
-        addDataProperty(computerInstance, "hasMemorySize", memorySize);
-        addDataProperty(computerInstance, "hasDiskSpeed", diskSpeed);
-        addDataProperty(computerInstance, "hasPowerSupply", powerSupply);
-        addDataProperty(computerInstance, "hasGPUModel", gpuModel);
-
-        // Spremamo izmene
-        saveOntology();
-
-        return computerInstance;
+        return details.toString();
     }
 
-    private void addDataProperty(OWLNamedIndividual individual, String propertyName, String value) {
-        if (value == null) {
-            throw new IllegalArgumentException("Value cannot be null for data property.");
-        }
-        OWLDataProperty property = dataFactory.getOWLDataProperty(IRI.create("http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8#" + propertyName));
-        OWLDataPropertyAssertionAxiom axiom = dataFactory.getOWLDataPropertyAssertionAxiom(property, individual, value);
-        manager.addAxiom(ontology, axiom);
+    private String getShortForm(IRI iri) {
+        String iriString = iri.toString();
+        // Extract part after the # symbol
+        return iriString.substring(iriString.indexOf('#') + 1);
     }
+
+
 }

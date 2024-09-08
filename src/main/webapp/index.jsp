@@ -52,7 +52,8 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to the Computer Evaluation System</h1>
+    <h1>Computer Store and Service Support System</h1>
+
 
     <!-- Kontejner koji centira dugmad jedno pored drugog -->
     <div class="button-container">
@@ -62,6 +63,11 @@
 
         <form action="findSimilarPage.jsp" method="get">
             <input type="submit" value="Find Similar Computers">
+        </form>
+
+        <!-- Dodato dugme za Upgrade -->
+        <form action="upgradePage.jsp" method="get">
+            <input type="submit" value="Upgrade Computer">
         </form>
     </div>
 </body>

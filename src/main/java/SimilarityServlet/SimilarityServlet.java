@@ -28,7 +28,7 @@ public class SimilarityServlet extends HttpServlet {
         try {
             // Nabavljanje putanje do fajla unutar WEB-INF direktorijuma
             ServletContext context = getServletContext();
-            String ontologyPath = context.getRealPath("/WEB-INF/resources/ontologyIZ.rdf");
+            String ontologyPath = context.getRealPath("/WEB-INF/resources/ontologyIZ.owx");
 
             File ontologyFile = new File(ontologyPath);
             if (!ontologyFile.exists()) {
@@ -43,7 +43,6 @@ public class SimilarityServlet extends HttpServlet {
         }
     }
 
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -51,24 +50,21 @@ public class SimilarityServlet extends HttpServlet {
             // Dobijanje unetih specifikacija za poređenje
             String cpuCores = request.getParameter("cpuCores");
             String memorySize = request.getParameter("memorySize");
-            String diskSpeed = request.getParameter("diskSpeed");
-            String powerSupply = request.getParameter("powerSupply");
             String gpuModel = request.getParameter("gpuModel");
 
             // Proverite da li su svi parametri prisutni
-            if (cpuCores == null || memorySize == null || diskSpeed == null || powerSupply == null || gpuModel == null) {
+            if (cpuCores == null || memorySize == null || gpuModel == null) {
                 StringBuilder missingParams = new StringBuilder("Missing parameters: ");
                 if (cpuCores == null) missingParams.append("cpuCores ");
                 if (memorySize == null) missingParams.append("memorySize ");
-                if (diskSpeed == null) missingParams.append("diskSpeed ");
-                if (powerSupply == null) missingParams.append("powerSupply ");
                 if (gpuModel == null) missingParams.append("gpuModel ");
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, missingParams.toString());
                 return;
             }
 
             // Kreiranje ili pronalaženje računara bazirano na unetim specifikacijama
-            OWLNamedIndividual targetComputer = ontologyDAO.createComputerInstance(cpuCores, memorySize, diskSpeed, powerSupply, gpuModel);
+            ontologyDAO.addComputerInstance("targetComputer", cpuCores, memorySize, gpuModel);
+            OWLNamedIndividual targetComputer = ontologyDAO.getIndividual("targetComputer");
             System.out.println("Target Computer: " + targetComputer.getIRI());
 
             // Pronalazak sličnog računara
@@ -78,15 +74,25 @@ public class SimilarityServlet extends HttpServlet {
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
 
-            out.println("<html><head><title>Similar Computers</title></head><body>");
+            out.println("<html><head><title>Similar Computers</title>");
+            out.println("<style>");
+            out.println("body {font-family: Arial, sans-serif;}");
+            out.println(".computer-list {margin-top: 20px;}");
+            out.println(".computer-item {padding: 10px; background-color: #f0f0f0; margin-bottom: 10px; border-radius: 5px;}");
+            out.println("a {text-decoration: none; color: #007BFF;}");
+            out.println("</style></head><body>");
             out.println("<h2>Similar Computers:</h2>");
 
             if (similarComputers != null && !similarComputers.isEmpty()) {
-                out.println("<ul>");
+                out.println("<div class='computer-list'>");
                 for (OWLNamedIndividual computer : similarComputers) {
-                    out.println("<li>" + getShortForm(computer.getIRI()) + "</li>");
+                    out.println("<div class='computer-item'>");
+                    out.println("<strong>Computer: </strong>" + getShortForm(computer.getIRI()));
+                    // Možeš dodati više detalja ovde, npr. CPU, RAM, GPU:
+                    out.println("<br><strong>Details: </strong>" + ontologyDAO.getComputerDetails(computer)); 
+                    out.println("</div>");
                 }
-                out.println("</ul>");
+                out.println("</div>");
             } else {
                 out.println("<p>No similar computers found.</p>");
             }
@@ -99,12 +105,10 @@ public class SimilarityServlet extends HttpServlet {
         }
     }
 
-
     private String getShortForm(IRI iri) {
-        // IRI može biti nešto poput: "http://www.semanticweb.org/nina/ontologies/2024/6/untitled-ontology-8"
-        // Da bismo dobili "untitled-ontology-8" iz ovog IRI, možemo da koristimo poslednji deo posle "/"
+        // Uklanjanje prefiksa iz IRI-a da bi se dobio lepši ispis
         String iriString = iri.toString();
-        int index = iriString.lastIndexOf('/');
+        int index = iriString.lastIndexOf('#');
         if (index != -1) {
             return iriString.substring(index + 1);
         }

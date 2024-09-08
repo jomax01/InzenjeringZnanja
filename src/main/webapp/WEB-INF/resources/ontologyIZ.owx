@@ -772,6 +772,9 @@
         <NamedIndividual IRI="#ASRock_AMD_Radeon_RX6600_GPU"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#ASRock_X570_Phantom_Gaming4"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#ASUS_CEREBERUS_GTX1050Ti"/>
     </Declaration>
     <Declaration>
@@ -779,6 +782,12 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ASUS_Monitor_VG248QG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASUS_Prime_H610M-K_D4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASUS_ROG_StrixZ690-E_Gaming"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ASUS_ROG_Swift_PG259QN"/>
@@ -791,6 +800,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ASUS_TUF_Gaming_NVIDIA_GF_RTX4070_Gaming"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ASUS_ZenBook_ProDuo15"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ATX"/>
@@ -809,6 +821,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Acer_Predator_X27"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alienware_Aurora_R12"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Asus_ROG-ZephyrusG14"/>
@@ -832,10 +847,106 @@
         <NamedIndividual IRI="#Corsair_H100i_RGB_Platinum"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Corsair_Onei200"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Cosmo_Cool_LCCC124"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#CrucialMX500_SSD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CyberPowerPC_Gamer_Xtreme_VR"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR2_1024"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR2_16"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR2_2048"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR2_32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR2_512"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR2_8"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR3_1024"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR3_16"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR3_2048"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR3_32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR3_512"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR3_8"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR4_1024"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR4_16"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR4_2048"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR4_32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR4_512"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR4_8"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR5_1024"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR5_16"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR5_2048"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR5_32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR5_512"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR5_8"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR_1024"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR_16"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR_2048"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR_32"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR_512"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DDR_8"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#DIMM-DDR1"/>
@@ -863,6 +974,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#DIMM-DDR5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dell_G15_Gaming_Laptop"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Dell_Monitor25S32D"/>
@@ -913,6 +1027,9 @@
         <NamedIndividual IRI="#Gigabyte_B550_AORUS_ELITE_V2"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Gigabyte_B660M_DS3H_DDR4"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Gigabyte_GF_RTX3060"/>
     </Declaration>
     <Declaration>
@@ -935,6 +1052,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#HP_Omen_X27"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HP_Pavilion_GamingDesktop"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#IntelB560"/>
@@ -1090,6 +1210,9 @@
         <NamedIndividual IRI="#Lenovo_Legion5Pro"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Lenovo_Legion_5Pro"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Linux_Debian_64bbit"/>
     </Declaration>
     <Declaration>
@@ -1120,6 +1243,9 @@
         <NamedIndividual IRI="#MSI_Computer_Video_GPU_GF_GTX"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#MSI_GS66_Stealth"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#MSI_Gaming_GF_RTX_3060"/>
     </Declaration>
     <Declaration>
@@ -1127,6 +1253,12 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#MSI_Gaming_GF_RTX_4070"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MSI_MPG_B550_Gaming_Edge"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MSI_Trident3"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#MacBookPro16inch"/>
@@ -1201,6 +1333,9 @@
         <NamedIndividual IRI="#RDIMM-DDR4"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Razer_Blade15_Advanced"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#SATA"/>
     </Declaration>
     <Declaration>
@@ -1271,6 +1406,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#beQuiet_DarkRock_Pro4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#iBUYPOWER_RDY_GamingPC"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#maxus_AMD_Radeon_RX_580"/>
@@ -2041,6 +2179,10 @@
         <NamedIndividual IRI="#ASRock_AMD_Radeon_RX6600_GPU"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#MotherBoard"/>
+        <NamedIndividual IRI="#ASRock_X570_Phantom_Gaming4"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#DedicatedGraphics"/>
         <NamedIndividual IRI="#ASUS_CEREBERUS_GTX1050Ti"/>
     </ClassAssertion>
@@ -2051,6 +2193,14 @@
     <ClassAssertion>
         <Class IRI="#Monitor"/>
         <NamedIndividual IRI="#ASUS_Monitor_VG248QG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MotherBoard"/>
+        <NamedIndividual IRI="#ASUS_Prime_H610M-K_D4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MotherBoard"/>
+        <NamedIndividual IRI="#ASUS_ROG_StrixZ690-E_Gaming"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Monitor"/>
@@ -2067,6 +2217,10 @@
     <ClassAssertion>
         <Class IRI="#DedicatedGraphics"/>
         <NamedIndividual IRI="#ASUS_TUF_Gaming_NVIDIA_GF_RTX4070_Gaming"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Laptop"/>
+        <NamedIndividual IRI="#ASUS_ZenBook_ProDuo15"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#ATX"/>
@@ -2091,6 +2245,10 @@
     <ClassAssertion>
         <Class IRI="#Monitor"/>
         <NamedIndividual IRI="#Acer_Predator_X27"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Desktop"/>
+        <NamedIndividual IRI="#Alienware_Aurora_R12"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Laptop"/>
@@ -2121,12 +2279,140 @@
         <NamedIndividual IRI="#Corsair_H100i_RGB_Platinum"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Desktop"/>
+        <NamedIndividual IRI="#Corsair_Onei200"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Cooler"/>
         <NamedIndividual IRI="#Cosmo_Cool_LCCC124"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#SSD"/>
         <NamedIndividual IRI="#CrucialMX500_SSD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Desktop"/>
+        <NamedIndividual IRI="#CyberPowerPC_Gamer_Xtreme_VR"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR2"/>
+        <NamedIndividual IRI="#DDR2_1024"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR2"/>
+        <NamedIndividual IRI="#DDR2_16"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR2"/>
+        <NamedIndividual IRI="#DDR2_2048"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR2"/>
+        <NamedIndividual IRI="#DDR2_32"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR2"/>
+        <NamedIndividual IRI="#DDR2_512"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR2"/>
+        <NamedIndividual IRI="#DDR2_8"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR3"/>
+        <NamedIndividual IRI="#DDR3_1024"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR3"/>
+        <NamedIndividual IRI="#DDR3_16"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR3"/>
+        <NamedIndividual IRI="#DDR3_2048"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR3"/>
+        <NamedIndividual IRI="#DDR3_32"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR3"/>
+        <NamedIndividual IRI="#DDR3_512"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR3"/>
+        <NamedIndividual IRI="#DDR3_8"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR4"/>
+        <NamedIndividual IRI="#DDR4_1024"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR4"/>
+        <NamedIndividual IRI="#DDR4_16"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR4"/>
+        <NamedIndividual IRI="#DDR4_2048"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR4"/>
+        <NamedIndividual IRI="#DDR4_32"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR4"/>
+        <NamedIndividual IRI="#DDR4_512"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR4"/>
+        <NamedIndividual IRI="#DDR4_8"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR5"/>
+        <NamedIndividual IRI="#DDR5_1024"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR5"/>
+        <NamedIndividual IRI="#DDR5_16"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR5"/>
+        <NamedIndividual IRI="#DDR5_2048"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR5"/>
+        <NamedIndividual IRI="#DDR5_32"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR5"/>
+        <NamedIndividual IRI="#DDR5_512"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR5"/>
+        <NamedIndividual IRI="#DDR5_8"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR"/>
+        <NamedIndividual IRI="#DDR_1024"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR"/>
+        <NamedIndividual IRI="#DDR_16"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR"/>
+        <NamedIndividual IRI="#DDR_2048"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR"/>
+        <NamedIndividual IRI="#DDR_32"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR"/>
+        <NamedIndividual IRI="#DDR_512"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DDR"/>
+        <NamedIndividual IRI="#DDR_8"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#DDR"/>
@@ -2179,6 +2465,10 @@
     <ClassAssertion>
         <Class IRI="#DIMM"/>
         <NamedIndividual IRI="#DIMM-DDR5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Laptop"/>
+        <NamedIndividual IRI="#Dell_G15_Gaming_Laptop"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Monitor"/>
@@ -2245,6 +2535,10 @@
         <NamedIndividual IRI="#Gigabyte_B550_AORUS_ELITE_V2"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#MotherBoard"/>
+        <NamedIndividual IRI="#Gigabyte_B660M_DS3H_DDR4"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#GPU"/>
         <NamedIndividual IRI="#Gigabyte_GF_RTX3060"/>
     </ClassAssertion>
@@ -2275,6 +2569,10 @@
     <ClassAssertion>
         <Class IRI="#Monitor"/>
         <NamedIndividual IRI="#HP_Omen_X27"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Desktop"/>
+        <NamedIndividual IRI="#HP_Pavilion_GamingDesktop"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#IntelChipset"/>
@@ -2477,6 +2775,10 @@
         <NamedIndividual IRI="#Lenovo_Legion5Pro"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Laptop"/>
+        <NamedIndividual IRI="#Lenovo_Legion_5Pro"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Linux64"/>
         <NamedIndividual IRI="#Linux_Debian_64bbit"/>
     </ClassAssertion>
@@ -2517,6 +2819,10 @@
         <NamedIndividual IRI="#MSI_Computer_Video_GPU_GF_GTX"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Laptop"/>
+        <NamedIndividual IRI="#MSI_GS66_Stealth"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#DedicatedGraphics"/>
         <NamedIndividual IRI="#MSI_Gaming_GF_RTX_3060"/>
     </ClassAssertion>
@@ -2529,8 +2835,12 @@
         <NamedIndividual IRI="#MSI_Gaming_GF_RTX_4070"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Laptop"/>
-        <NamedIndividual IRI="#MacBookPro16inch"/>
+        <Class IRI="#MotherBoard"/>
+        <NamedIndividual IRI="#MSI_MPG_B550_Gaming_Edge"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Desktop"/>
+        <NamedIndividual IRI="#MSI_Trident3"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Mac"/>
@@ -2623,6 +2933,10 @@
     <ClassAssertion>
         <Class IRI="#DDR4"/>
         <NamedIndividual IRI="#RDIMM-DDR4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Laptop"/>
+        <NamedIndividual IRI="#Razer_Blade15_Advanced"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#SATA"/>
@@ -2737,6 +3051,10 @@
         <NamedIndividual IRI="#beQuiet_DarkRock_Pro4"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Desktop"/>
+        <NamedIndividual IRI="#iBUYPOWER_RDY_GamingPC"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#GPU"/>
         <NamedIndividual IRI="#maxus_AMD_Radeon_RX_580"/>
     </ClassAssertion>
@@ -2752,6 +3070,96 @@
         <Class IRI="#AMDSocket"/>
         <NamedIndividual IRI="#FM2+_CPU_Socket"/>
     </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPUSocket"/>
+        <NamedIndividual IRI="#ASRock_X570_Phantom_Gaming4"/>
+        <NamedIndividual IRI="#AM4_CPU_Socket"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasChipset"/>
+        <NamedIndividual IRI="#ASRock_X570_Phantom_Gaming4"/>
+        <NamedIndividual IRI="#AMD_B550_chipset"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasConnector"/>
+        <NamedIndividual IRI="#ASRock_X570_Phantom_Gaming4"/>
+        <NamedIndividual IRI="#PCIe_3.0"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFormFactor"/>
+        <NamedIndividual IRI="#ASRock_X570_Phantom_Gaming4"/>
+        <NamedIndividual IRI="#ATX"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAMType"/>
+        <NamedIndividual IRI="#ASRock_X570_Phantom_Gaming4"/>
+        <NamedIndividual IRI="#DIMM-DDR3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPUSocket"/>
+        <NamedIndividual IRI="#ASUS_Prime_H610M-K_D4"/>
+        <NamedIndividual IRI="#LGA_1200_CPU_Socket"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasChipset"/>
+        <NamedIndividual IRI="#ASUS_Prime_H610M-K_D4"/>
+        <NamedIndividual IRI="#Intel_B760_chipset"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasConnector"/>
+        <NamedIndividual IRI="#ASUS_Prime_H610M-K_D4"/>
+        <NamedIndividual IRI="#PCIe3.0"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFormFactor"/>
+        <NamedIndividual IRI="#ASUS_Prime_H610M-K_D4"/>
+        <NamedIndividual IRI="#Micro-ATX"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAMType"/>
+        <NamedIndividual IRI="#ASUS_Prime_H610M-K_D4"/>
+        <NamedIndividual IRI="#DIMM-DDR4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPUSocket"/>
+        <NamedIndividual IRI="#ASUS_ROG_StrixZ690-E_Gaming"/>
+        <NamedIndividual IRI="#LGA_1700_CPU_Socket"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasChipset"/>
+        <NamedIndividual IRI="#ASUS_ROG_StrixZ690-E_Gaming"/>
+        <NamedIndividual IRI="#Intel_Z690_chipset"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasConnector"/>
+        <NamedIndividual IRI="#ASUS_ROG_StrixZ690-E_Gaming"/>
+        <NamedIndividual IRI="#PCIe5.0"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFormFactor"/>
+        <NamedIndividual IRI="#ASUS_ROG_StrixZ690-E_Gaming"/>
+        <NamedIndividual IRI="#ATX"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAMType"/>
+        <NamedIndividual IRI="#ASUS_ROG_StrixZ690-E_Gaming"/>
+        <NamedIndividual IRI="#DIMM-DDR5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPU"/>
+        <NamedIndividual IRI="#ASUS_ZenBook_ProDuo15"/>
+        <NamedIndividual IRI="#Intel_Corei9_13900K_Processor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGPU"/>
+        <NamedIndividual IRI="#ASUS_ZenBook_ProDuo15"/>
+        <NamedIndividual IRI="#GeForce_RTX_4070"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAM"/>
+        <NamedIndividual IRI="#ASUS_ZenBook_ProDuo15"/>
+        <NamedIndividual IRI="#DIMM-DDR4_RAM_Slot"/>
+    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasCPU"/>
         <NamedIndividual IRI="#AcerSwiftX"/>
@@ -2784,6 +3192,21 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasCPU"/>
+        <NamedIndividual IRI="#Alienware_Aurora_R12"/>
+        <NamedIndividual IRI="#Intel_Corei9_12900K_Processor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGPU"/>
+        <NamedIndividual IRI="#Alienware_Aurora_R12"/>
+        <NamedIndividual IRI="#GeForce_RTX_3080"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAM"/>
+        <NamedIndividual IRI="#Alienware_Aurora_R12"/>
+        <NamedIndividual IRI="#DIMM-DDR4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPU"/>
         <NamedIndividual IRI="#Asus_ROG-ZephyrusG14"/>
         <NamedIndividual IRI="#AMD_Ryzen9_5900X_CPU"/>
     </ObjectPropertyAssertion>
@@ -2811,6 +3234,51 @@
         <ObjectProperty IRI="#hasRAM"/>
         <NamedIndividual IRI="#CorsairOnei300"/>
         <NamedIndividual IRI="#DIMM-DDR5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPU"/>
+        <NamedIndividual IRI="#Corsair_Onei200"/>
+        <NamedIndividual IRI="#Intel_Corei9_12900K_Processor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGPU"/>
+        <NamedIndividual IRI="#Corsair_Onei200"/>
+        <NamedIndividual IRI="#GeForce_RTX_3050"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAM"/>
+        <NamedIndividual IRI="#Corsair_Onei200"/>
+        <NamedIndividual IRI="#DIMM-DDR3L"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPU"/>
+        <NamedIndividual IRI="#CyberPowerPC_Gamer_Xtreme_VR"/>
+        <NamedIndividual IRI="#Intel_Corei5_10400F_Hexa_Core_Processor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGPU"/>
+        <NamedIndividual IRI="#CyberPowerPC_Gamer_Xtreme_VR"/>
+        <NamedIndividual IRI="#GeForce_RTX_3050"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAM"/>
+        <NamedIndividual IRI="#CyberPowerPC_Gamer_Xtreme_VR"/>
+        <NamedIndividual IRI="#DIMM-DDR4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPU"/>
+        <NamedIndividual IRI="#Dell_G15_Gaming_Laptop"/>
+        <NamedIndividual IRI="#GeForce_RTX_3600Ti"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGPU"/>
+        <NamedIndividual IRI="#Dell_G15_Gaming_Laptop"/>
+        <NamedIndividual IRI="#AMD_Ryzen7_5800X_CPU"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAM"/>
+        <NamedIndividual IRI="#Dell_G15_Gaming_Laptop"/>
+        <NamedIndividual IRI="#DIMM-DDR4-ECC"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasCPU"/>
@@ -2868,9 +3336,39 @@
         <NamedIndividual IRI="#DIMM-DDR4_RAM_Slot"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPUSocket"/>
+        <NamedIndividual IRI="#Gigabyte_B660M_DS3H_DDR4"/>
+        <NamedIndividual IRI="#LGA_2011_CPU_Socket"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasChipset"/>
+        <NamedIndividual IRI="#Gigabyte_B660M_DS3H_DDR4"/>
+        <NamedIndividual IRI="#Intel_B660_chipset"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasConnector"/>
+        <NamedIndividual IRI="#Gigabyte_B660M_DS3H_DDR4"/>
+        <NamedIndividual IRI="#PCIe_4.0"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFormFactor"/>
+        <NamedIndividual IRI="#Gigabyte_B660M_DS3H_DDR4"/>
+        <NamedIndividual IRI="#Micro-ATX"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAMType"/>
+        <NamedIndividual IRI="#Gigabyte_B660M_DS3H_DDR4"/>
+        <NamedIndividual IRI="#DIMM-DDR4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasCPU"/>
         <NamedIndividual IRI="#HP-SpectreX360-14"/>
         <NamedIndividual IRI="#Intel_Corei7_12700KF_Processor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGPU"/>
+        <NamedIndividual IRI="#HP-SpectreX360-14"/>
+        <NamedIndividual IRI="#GeForce_RTX_3600Ti"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasRAM"/>
@@ -2893,6 +3391,21 @@
         <NamedIndividual IRI="#DIMM-DDR4-ECC"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPU"/>
+        <NamedIndividual IRI="#HP_Pavilion_GamingDesktop"/>
+        <NamedIndividual IRI="#AMD_Ryzen5_5500_CPU"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGPU"/>
+        <NamedIndividual IRI="#HP_Pavilion_GamingDesktop"/>
+        <NamedIndividual IRI="#GeForce_RTX_3050"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAM"/>
+        <NamedIndividual IRI="#HP_Pavilion_GamingDesktop"/>
+        <NamedIndividual IRI="#DIMM-DDR4-ECC"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasCooler"/>
         <NamedIndividual IRI="#Intel_Corei3_10105F_Quad_Core_Processor"/>
         <NamedIndividual IRI="#Cosmo_Cool_LCCC124"/>
@@ -2901,6 +3414,11 @@
         <ObjectProperty IRI="#hasCPU"/>
         <NamedIndividual IRI="#LenovoThinkPadX1Carbon"/>
         <NamedIndividual IRI="#Intel_Corei7_12700K_Processor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGPU"/>
+        <NamedIndividual IRI="#LenovoThinkPadX1Carbon"/>
+        <NamedIndividual IRI="#GeForce_RTX_3090"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasRAM"/>
@@ -2921,6 +3439,106 @@
         <ObjectProperty IRI="#hasRAM"/>
         <NamedIndividual IRI="#Lenovo_Legion5Pro"/>
         <NamedIndividual IRI="#DIMM-DDR5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPU"/>
+        <NamedIndividual IRI="#Lenovo_Legion_5Pro"/>
+        <NamedIndividual IRI="#AMD_Ryzen7_5800X_CPU"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGPU"/>
+        <NamedIndividual IRI="#Lenovo_Legion_5Pro"/>
+        <NamedIndividual IRI="#GeForce_RTX_4070"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAM"/>
+        <NamedIndividual IRI="#Lenovo_Legion_5Pro"/>
+        <NamedIndividual IRI="#DIMM-DDR4_RAM_Slot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPU"/>
+        <NamedIndividual IRI="#MSI_GS66_Stealth"/>
+        <NamedIndividual IRI="#Intel_Corei9_12900K_Processor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGPU"/>
+        <NamedIndividual IRI="#MSI_GS66_Stealth"/>
+        <NamedIndividual IRI="#GeForce_RTX_3080"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAM"/>
+        <NamedIndividual IRI="#MSI_GS66_Stealth"/>
+        <NamedIndividual IRI="#DIMM-DDR5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPUSocket"/>
+        <NamedIndividual IRI="#MSI_MPG_B550_Gaming_Edge"/>
+        <NamedIndividual IRI="#AM4_CPU_Socket"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasChipset"/>
+        <NamedIndividual IRI="#MSI_MPG_B550_Gaming_Edge"/>
+        <NamedIndividual IRI="#AMD_B550_chipset"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasConnector"/>
+        <NamedIndividual IRI="#MSI_MPG_B550_Gaming_Edge"/>
+        <NamedIndividual IRI="#PCIe4.0"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFormFactor"/>
+        <NamedIndividual IRI="#MSI_MPG_B550_Gaming_Edge"/>
+        <NamedIndividual IRI="#ATX"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAMType"/>
+        <NamedIndividual IRI="#MSI_MPG_B550_Gaming_Edge"/>
+        <NamedIndividual IRI="#DIMM-DDR4"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPU"/>
+        <NamedIndividual IRI="#MSI_Trident3"/>
+        <NamedIndividual IRI="#Intel_Corei7_12700K_Processor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGPU"/>
+        <NamedIndividual IRI="#MSI_Trident3"/>
+        <NamedIndividual IRI="#GeForce_RTX_3600Ti"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAM"/>
+        <NamedIndividual IRI="#MSI_Trident3"/>
+        <NamedIndividual IRI="#DIMM-DDR4-ECC"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPU"/>
+        <NamedIndividual IRI="#Razer_Blade15_Advanced"/>
+        <NamedIndividual IRI="#Intel_Corei7_12700K_Processor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGPU"/>
+        <NamedIndividual IRI="#Razer_Blade15_Advanced"/>
+        <NamedIndividual IRI="#GeForce_RTX_3090"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAM"/>
+        <NamedIndividual IRI="#Razer_Blade15_Advanced"/>
+        <NamedIndividual IRI="#DIMM-DDR4_RAM_Slot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCPU"/>
+        <NamedIndividual IRI="#iBUYPOWER_RDY_GamingPC"/>
+        <NamedIndividual IRI="#Intel_Corei5_13600K_Processor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGPU"/>
+        <NamedIndividual IRI="#iBUYPOWER_RDY_GamingPC"/>
+        <NamedIndividual IRI="#GeForce_RTX_3600Ti"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRAM"/>
+        <NamedIndividual IRI="#iBUYPOWER_RDY_GamingPC"/>
+        <NamedIndividual IRI="#DIMM-DDR4_RAM_Slot"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#gpuClockSpeed"/>
@@ -5308,5 +5926,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 

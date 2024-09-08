@@ -5,14 +5,17 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SimilarComputerFinder {
 
+    private static final Logger logger = Logger.getLogger(SimilarComputerFinder.class.getName());
+
     public static void main(String[] args) {
         try {
-            // Ručno navedi putanju do ontologije
-            String filePath = "/WEB-INF/resources/ontologyIZ.rdf"; // Unesite apsolutnu putanju do ontologije
+            // Ručno navedi putanju do ontologije (može biti dinamički dodeljena ako koristiš servlete)
+            String filePath = "/WEB-INF/resources/ontologyIZ.owx"; // Unesite apsolutnu putanju do ontologije
             
             // Kreiramo instancu ComputerOntologyDAO sa apsolutnom putanjom
             ComputerOntologyDAO ontologyDAO = new ComputerOntologyDAO(new File(filePath));
@@ -22,22 +25,24 @@ public class SimilarComputerFinder {
             OWLNamedIndividual targetComputer = ontologyDAO.getIndividual("SomeComputerInstance");
 
             if (targetComputer != null) {
+                // Pronalazi najsličniji računar
                 OWLNamedIndividual mostSimilar = caseRetrieval.findMostSimilar(targetComputer);
 
                 if (mostSimilar != null) {
-                    System.out.println("Most similar computer: " + mostSimilar);
+                    // Ispisujemo detalje sličnog računara
+                    System.out.println("Most similar computer: " + ontologyDAO.getComputerDetails(mostSimilar));
                 } else {
-                    System.out.println("No similar computers found.");
+                    logger.log(Level.INFO, "No similar computers found.");
                 }
             } else {
-                System.out.println("Target computer instance not found.");
+                logger.log(Level.WARNING, "Target computer instance not found.");
             }
         } catch (OWLOntologyCreationException e) {
-            System.err.println("Error creating ontology: " + e.getMessage());
+            logger.log(Level.SEVERE, "Error creating ontology: " + e.getMessage(), e);
         } catch (FileNotFoundException e) {
-            System.err.println("Ontology file not found: " + e.getMessage());
+            logger.log(Level.SEVERE, "Ontology file not found: " + e.getMessage(), e);
         } catch (Exception e) {
-            System.err.println("An unexpected error occurred: " + e.getMessage());
+            logger.log(Level.SEVERE, "An unexpected error occurred: " + e.getMessage(), e);
         }
     }
 }
